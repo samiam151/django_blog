@@ -39,4 +39,9 @@ footer {
     .posts .post p {
       padding-right: 5em; }
 
+.message {
+  background-color: limegreen;
+  text-align: center;
+  padding: 10px 0; }
+
 /*# sourceMappingURL=style.css.map */
