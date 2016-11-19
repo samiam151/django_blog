@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Blog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="{% url "posts:list" %}">Posts</a>
+        <a href="{% url "posts:create" %}">Create a Post</a>
+    </header>
+
+    <!-- Messages -->
+    {% include "includes/messages.html" %}
+
+    <!-- Render Body -->
+    <div class="container">
+        <h1>{{title}}</h1>
+        {% block content %}{% endblock content %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Nick Sam. Made with Django.
+    </footer>
+
+</body>
+</html>

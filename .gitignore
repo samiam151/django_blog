@@ -1,0 +1,4 @@
+env
+.sass-cache
+**\__pycache__
+\.vscode

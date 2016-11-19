@@ -1,0 +1,18 @@
+.posts {
+    display: flex;
+    flex-flow: row wrap;
+    /*justify-content: space-between;*/
+
+    .post {
+        width: calc(100% / 2);
+        
+        
+        h3 {
+            margin: 15px 0;
+        }
+
+        p {
+            padding-right: 5em;
+        }
+    }
+}

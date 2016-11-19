@@ -1,0 +1,23 @@
+{% extends "shared/_layout.html" %}
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+{% endif %}
+
+
+<h2>{{instance.title}}</h2>
+
+<p>{{instance.content}}</p>
+<p>{{instance.updated}}</p>
+<p>{{instance.timestamp}}</p>
+<p>ID: {{instance.id}}</p>
+
+<a href="{% url 'posts:update' id=instance.id  %}">Edit</a>
+<a href="{% url 'posts:delete' id=instance.id  %}">Delete</a>
+
+{% endblock content %}
+    

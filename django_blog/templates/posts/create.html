@@ -1,0 +1,21 @@
+{% extends "shared/_layout.html" %}
+{% block content %}
+
+<form method="POST" action="">{% csrf_token %}
+    <label for="{{form.title.id_for_label}}">New Title: </label>
+    {{form.title}}
+
+    <label for="{{form.content.id_for_label}}">New Content: </label>
+    {{form.content}}
+
+    {% if edit %}
+        <input type="submit" value="Edit Post">
+    {% else %}
+        <input type="submit" value="Create Post">
+    {% endif %}
+    
+</form>
+
+
+{% endblock content %}
+    

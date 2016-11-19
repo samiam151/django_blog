@@ -1,0 +1,16 @@
+{% extends "shared/_layout.html" %}
+
+{% block content %}
+
+<div class="posts">
+    {% for post in posts %}
+    <div class="post">
+        <h3><a href="{% url 'posts:detail' id=post.id %}">{{post.title}}</a></h3>
+        <p>{{post.content}}</p>
+        <p>{{post.timestamp}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+    
