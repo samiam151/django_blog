@@ -7,14 +7,13 @@ from .forms import PostForm
 
 # CREATE A POST
 def post_create(request):
-    form = PostForm(request.POST) or None
+    form = PostForm(request.POST or None, request.FILES or None) 
     if form.is_valid():
         instance = form.save(commit=False)
         print(form.cleaned_data.get('title'))
         instance.save()
 
         messages.success(request, "Create Post Successful! ")
-    
     else:
         messages.error(request, 'Error. Post not created.')
 
@@ -45,7 +44,7 @@ def post_list(request):
 # UPDATE A POST
 def post_update(request, id=None):
     instance = get_object_or_404(Post, id=id)
-    form = PostForm(request.POST or None, instance=instance)
+    form = PostForm(request.POST or None, request.FILES or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
@@ -59,6 +58,7 @@ def post_update(request, id=None):
     }
     return render(request, 'posts/create.html', context)
 
+# DELETE A POST
 def post_delete(request, id=None):
     instance = get_object_or_404(Post, id=id)
     instance.delete()

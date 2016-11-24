@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
+/*Shared Styles*/
+@import "shared/vars";
 @import "shared/global";
 @import "shared/header";
 @import "shared/footer";
+
+/*Posts Styles*/
 @import "posts/posts";
+@import "posts/create";
+
+/*Include Styles*/
 @import "includes/messages";

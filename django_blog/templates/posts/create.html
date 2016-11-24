@@ -1,21 +1,24 @@
 {% extends "shared/_layout.html" %}
 {% block content %}
 
-<form method="POST" action="">{% csrf_token %}
-    <label for="{{form.title.id_for_label}}">New Title: </label>
-    {{form.title}}
+<div class="form-container" enctype="multipart/form-data">
+    <form method="POST" action="" class="create-form">{% csrf_token %}
+        <label for="{{form.title.id_for_label}}">New Title: </label>
+        {{form.title}}
 
-    <label for="{{form.content.id_for_label}}">New Content: </label>
-    {{form.content}}
+        <label for="{{form.content.id_for_label}}">New Content: </label>
+        {{form.content}}
 
-    {% if edit %}
-        <input type="submit" value="Edit Post">
-    {% else %}
-        <input type="submit" value="Create Post">
-    {% endif %}
-    
-</form>
+        <label for="{{form.content.id_for_label}}">Choose Image: </label>
+        {{form.image}}
 
+        {% if edit %}
+            <input type="submit" value="Edit Post" class="button">
+        {% else %}
+            <input type="submit" value="Create Post" class="button">
+        {% endif %}
+    </form>
+</div>
 
 {% endblock content %}
     

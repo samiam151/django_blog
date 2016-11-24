@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Asap', sans-serif;
     box-sizing: border-box;
 }
 
@@ -12,9 +12,10 @@ html {
 body {
     position: relative;
     min-height: 100vh;
-    
+    background-color: #eee;
+    color: rgba(0,0,0,0.8);
 }
 
 .container {
-    padding: 2.5em 4em 8em;
+    padding: 5.5em 4em 8em;
 }

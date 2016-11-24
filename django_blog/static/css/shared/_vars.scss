@@ -1,0 +1,37 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Asap');
+
+/* Variables */
+$main-color: #8ee472;
+$main-font-color: white;
+$gray: #e2e2e2;
+
+/* Helper Defeinitions */
+@mixin button {
+    border: none;
+    background-color: $main-color;
+    color: $main-font-color;
+    padding: 5px 10px;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: darken($main-color, 10%);
+        cursor: pointer;
+    }
+}
+
+@mixin input {
+    border-radius: 3px;
+    border: 1px solid $gray;
+    padding: 3px 5px;
+}
+
+
+/* Helper Classes */
+.button {
+    @include button;
+}
+
+.input {
+    @include input;
+}

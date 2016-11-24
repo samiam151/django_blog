@@ -1,8 +1,28 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+/*Shared Styles*/
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Asap");
+/* Variables */
+/* Helper Defeinitions */
+/* Helper Classes */
+.button {
+  border: none;
+  background-color: #8ee472;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px; }
+  .button:hover {
+    background-color: #6cdc47;
+    cursor: pointer; }
+
+.input {
+  border-radius: 3px;
+  border: 1px solid #e2e2e2;
+  padding: 3px 5px; }
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Asap', sans-serif;
   box-sizing: border-box; }
 
 html {
@@ -10,35 +30,59 @@ html {
 
 body {
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.8); }
 
 .container {
-  padding: 2.5em 4em 8em; }
+  padding: 5.5em 4em 8em; }
 
 header {
-  background-color: black;
+  background-color: #8ee472;
   height: 50px;
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0 1.5px 3.2px rgba(0, 0, 0, 0.4);
+  /*position: fixed;*/ }
 
 footer {
-  height: 50px;
   width: 100%;
   background-color: black;
   color: white;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  font-size: small;
+  padding: 5px 50px;
+  text-align: center; }
 
+/*Posts Styles*/
 .posts {
   display: flex;
   flex-flow: row wrap;
   /*justify-content: space-between;*/ }
   .posts .post {
-    width: calc(100% / 2); }
-    .posts .post h3 {
-      margin: 15px 0; }
-    .posts .post p {
-      padding-right: 5em; }
+    width: calc(100% / 2 - 15px);
+    margin: 2em 15px;
+    margin-left: -4px;
+    padding: 10px; }
+    .posts .post .post-inner {
+      padding: 20px;
+      border: 1.5px solid #ddd;
+      border-radius: 3px;
+      min-height: 10em;
+      box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.3);
+      background-color: #fff; }
+      .posts .post .post-inner h3 {
+        margin: 15px 0 0; }
+      .posts .post .post-inner p {
+        padding-right: 5em;
+        padding-top: 1em; }
+      .posts .post .post-inner img {
+        width: 100%; }
 
+.create-form label {
+  display: block; }
+
+/*Include Styles*/
 .message {
   background-color: limegreen;
   text-align: center;

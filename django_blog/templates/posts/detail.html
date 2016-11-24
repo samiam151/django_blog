@@ -2,7 +2,12 @@
 
 {% block content %}
 
+
 <h2>{{instance.title}}</h2>
+
+{% if instance.image %}
+    <img src="{{instance.image.url}}" alt="">
+{% endif %}
 
 <p>{{instance.content}}</p>
 <p>{{instance.updated}}</p>

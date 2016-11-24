@@ -3,16 +3,34 @@
     flex-flow: row wrap;
     /*justify-content: space-between;*/
 
+    
     .post {
-        width: calc(100% / 2);
-        
-        
-        h3 {
-            margin: 15px 0;
-        }
+        width: calc(100% / 2 - 15px);
+        margin: 2em 15px;
+        margin-left: -4px;
+        padding: 10px;
 
-        p {
-            padding-right: 5em;
+        .post-inner {
+            padding: 20px;
+            border: 1.5px solid #ddd;
+            border-radius: 3px;
+            min-height: 10em;
+            box-shadow: 0 3px 6px -3px rgba(0,0,0,0.3);
+            background-color: #fff;
+            
+            h3 {
+                margin: 15px 0 0;
+            }
+
+            p {
+                padding-right: 5em;
+                padding-top: 1em;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     }
+
 }
