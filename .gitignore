@@ -2,3 +2,7 @@ env
 .sass-cache
 **\__pycache__
 \.vscode
+**/*.css.map
+**/*.css
+.css
+.css.map

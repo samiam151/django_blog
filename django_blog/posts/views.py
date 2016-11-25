@@ -10,7 +10,7 @@ def post_create(request):
     form = PostForm(request.POST or None, request.FILES or None) 
     if form.is_valid():
         instance = form.save(commit=False)
-        print(form.cleaned_data.get('title'))
+        # print(form.cleaned_data.get('title'))
         instance.save()
 
         messages.success(request, "Create Post Successful! ")
@@ -50,6 +50,7 @@ def post_update(request, id=None):
         instance.save()
         messages.success(request, "Edit successfully saved!")
         return HttpResponseRedirect(instance.get_absolute_url())
+        
     context = {
         "title": instance.title,
         "instance": instance,

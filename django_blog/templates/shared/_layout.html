@@ -9,7 +9,7 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header class="container">
         <a href="{% url "posts:list" %}">Posts</a>
         <a href="{% url "posts:create" %}">Create a Post</a>
     </header>
@@ -18,8 +18,8 @@
     {% include "includes/messages.html" %}
 
     <!-- Render Body -->
-    <div class="container">
-        <h1>{{title}}</h1>
+    <div class="container layout-container">
+        {% comment %}<h1>{{title}}</h1>{% endcomment %}
         {% block content %}{% endblock content %}
     </div>
 

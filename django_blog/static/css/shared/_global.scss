@@ -16,6 +16,19 @@ body {
     color: rgba(0,0,0,0.8);
 }
 
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 .container {
-    padding: 5.5em 4em 8em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.layout-container {
+    padding-top: 2em;
+    padding-bottom: 2em;
 }

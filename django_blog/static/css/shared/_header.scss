@@ -3,5 +3,16 @@ header {
     height: 50px;
     width: 100%;
     box-shadow: 0 1.5px 3.2px rgba(0,0,0,0.4);
-    /*position: fixed;*/
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-top: 1em;
+    position: fixed;
+
+    a {
+        margin-left: 2em;
+        &:hover {
+            border-bottom: 3.5px solid black;
+        }
+    }
 }
