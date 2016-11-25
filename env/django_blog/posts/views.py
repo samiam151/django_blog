@@ -14,6 +14,7 @@ def post_create(request):
         instance.save()
 
         messages.success(request, "Create Post Successful! ")
+        return redirect("posts:list")
     else:
         messages.error(request, 'Error. Post not created.')
 

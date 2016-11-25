@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
 
 # Create your models here.
 class Post(models.Model):
@@ -17,3 +19,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("posts:detail", kwargs={"id": self.id})
         # return '/posts/{0}/'.format(self.id)
+
+def pre_save_post_reciever(sender, instance, *args, **kwargs):
+    slug = slugify(instance.title)
+    exists = Post.objects.filter(slug=slug).exists()
+    if exists:
+        slug = "{0}-{1}".format(slugify(instance.title), instance.id)
+    instance.slug = slug
+    
+pre_save.connect(pre_save_post_reciever, sender= Post) 

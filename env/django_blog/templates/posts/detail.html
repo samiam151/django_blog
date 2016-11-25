@@ -2,20 +2,23 @@
 
 {% block content %}
 
+<div class="post-detail">
+    <h2>{{instance.title}}</h2>
 
-<h2>{{instance.title}}</h2>
+    {% if instance.image %}
+        <img src="{{instance.image.url}}" alt="" class="post-detail-main-image">
+    {% endif %}
 
-{% if instance.image %}
-    <img src="{{instance.image.url}}" alt="">
-{% endif %}
+    <div class="post-detail-content">
+        <p>{{instance.content}}</p>
+    </div>
+    
+    <p>Created on {{instance.timestamp|date}}</p>
 
-<p>{{instance.content}}</p>
-<p>{{instance.updated}}</p>
-<p>{{instance.timestamp}}</p>
-<p>ID: {{instance.id}}</p>
+    <a href="{% url 'posts:update' id=instance.id  %}">Edit</a>
+    <a href="{% url 'posts:delete' id=instance.id  %}">Delete</a>
+</div>
 
-<a href="{% url 'posts:update' id=instance.id  %}">Edit</a>
-<a href="{% url 'posts:delete' id=instance.id  %}">Delete</a>
 
 {% endblock content %}
     

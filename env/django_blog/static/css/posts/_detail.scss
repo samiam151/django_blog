@@ -1,0 +1,22 @@
+.post-detail {
+    padding: 0 15% 5%;
+
+    *+* {
+        margin-top: 20px;
+    }
+
+    img.post-detail-main-image {
+        width: 100%;
+    }
+
+    .post-detail-content {
+        p {
+            font-size: 1.1em;
+            line-height: 1.55em;
+
+            &::first-line {
+                font-weight: 700;
+            }
+        }
+    }
+}

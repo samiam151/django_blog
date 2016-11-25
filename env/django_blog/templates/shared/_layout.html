@@ -14,12 +14,12 @@
         <a href="{% url "posts:create" %}">Create a Post</a>
     </header>
 
-    <!-- Messages -->
-    {% include "includes/messages.html" %}
-
     <!-- Render Body -->
     <div class="container layout-container">
-        {% comment %}<h1>{{title}}</h1>{% endcomment %}
+        <!-- Messages -->
+        {% include "includes/messages.html" %}
+
+        <!-- Body Content -->
         {% block content %}{% endblock content %}
     </div>
 
