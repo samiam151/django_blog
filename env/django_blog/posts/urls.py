@@ -2,11 +2,18 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from .import views
+from .views import (
+    PostList,
+    PostDetail,
+    PostCreate,
+    PostUpdate,
+    PostDelete
+    )
 
 urlpatterns = [
-    url(r'^create$', views.post_create, name="create"),
-    url(r'^$', views.post_list, name="list"), # Show all posts
-    url(r'^(?P<id>\d+)$', views.post_detail, name="detail"), # Show specific post
-    url(r'^(?P<id>\d+)/delete$', views.post_delete, name="delete"),
-    url(r'^(?P<id>\d+)/edit$', views.post_update, name="update"), # Edit specific post
+    url(r'^create$', PostCreate.as_view(), name="create"),
+    url(r'^$', PostList.as_view(), name="list"), # Show all posts
+    url(r'^(?P<pk>\d+)$', PostDetail.as_view(), name="detail"), # Show specific post
+    url(r'^(?P<pk>\d+)/delete$', PostDelete.as_view(), name="delete"),
+    url(r'^(?P<pk>\d+)/edit$', PostUpdate.as_view(), name="update"), # Edit specific post
 ]

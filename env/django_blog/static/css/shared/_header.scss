@@ -1,5 +1,5 @@
 header {
-    background-color: $main-color;
+    background: linear-gradient(173deg, darken($main-color, 10%), $main-color, $main-color, darken($main-color, 10%));
     height: 50px;
     width: 100%;
     box-shadow: 0 1.5px 3.2px rgba(0,0,0,0.4);

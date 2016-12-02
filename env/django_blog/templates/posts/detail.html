@@ -3,20 +3,20 @@
 {% block content %}
 
 <div class="post-detail">
-    <h2>{{instance.title}}</h2>
+    <h2>{{object.title}}</h2>
 
-    {% if instance.image %}
-        <img src="{{instance.image.url}}" alt="" class="post-detail-main-image">
+    {% if object.image %}
+        <img src="{{object.image.url}}" alt="" class="post-detail-main-image">
     {% endif %}
 
     <div class="post-detail-content">
-        <p>{{instance.content}}</p>
+        <p>{{object.content}}</p>
     </div>
     
-    <p>Created on {{instance.timestamp|date}}</p>
+    <p>Created on {{object.timestamp|date}}</p>
 
-    <a href="{% url 'posts:update' id=instance.id  %}">Edit</a>
-    <a href="{% url 'posts:delete' id=instance.id  %}">Delete</a>
+    <a href="{% url 'posts:update' pk=object.pk  %}">Edit</a>
+    <a href="{% url 'posts:delete' pk=object.pk  %}">Delete</a>
 </div>
 
 

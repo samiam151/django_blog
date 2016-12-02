@@ -11,7 +11,7 @@
                     {% comment %}<img src="{{post.image.url}}" alt="{{post.image.url}}">{% endcomment %}
                 </div>
             {% endif %}
-            <h3><a href="{% url 'posts:detail' id=post.id %}">{{ post.title }}</a></h3>
+            <h3><a href="{% url 'posts:detail' pk=post.pk %}">{{ post.title }}</a></h3>
             <small>{{ post.timestamp | timesince:post.updated }}</small>
 
             <p>{{ post.content | truncatewords_html:40 }}</p>
