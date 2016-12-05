@@ -7,13 +7,14 @@ from .views import (
     PostDetail,
     PostCreate,
     PostUpdate,
-    PostDelete
+    # PostDelete
     )
 
 urlpatterns = [
     url(r'^create$', PostCreate.as_view(), name="create"),
     url(r'^$', PostList.as_view(), name="list"), # Show all posts
     url(r'^(?P<pk>\d+)$', PostDetail.as_view(), name="detail"), # Show specific post
-    url(r'^(?P<pk>\d+)/delete$', PostDelete.as_view(), name="delete"),
+    url(r'^(?P<pk>\d+)/delete$', views.post_delete, name="delete"),
     url(r'^(?P<pk>\d+)/edit$', PostUpdate.as_view(), name="update"), # Edit specific post
+    url(r'^json-list/$', views.json_list, name="json_list"),
 ]

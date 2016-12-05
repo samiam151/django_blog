@@ -1,8 +1,9 @@
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.core import serializers
 
 from .models import Post
 from .forms import PostForm
@@ -33,16 +34,22 @@ class PostUpdate(UpdateView):
     success_url = "/posts"
 
 # DELETE A POST
-class PostDelete(DeleteView):
-    model = Post
-    template_name = "posts/delete.html"
-    success_url = "/posts"
+# class PostDelete(DeleteView):
+#     model = Post
+#     template_name = "posts/delete.html"
+#     success_url = "/posts"
 
-# def post_delete(request, id=None):
-#     instance = get_object_or_404(Post, id=id)
-#     instance.delete()
-#     messages.success(request, "Successfully Deleted.")
-#     return redirect("posts:list")
+# Ajax endpoint for all Posts
+def json_list(request):
+    posts = Post.objects.all()
+    data = serializers.serialize('json', posts)
+    return HttpResponse(data, content_type="application/json")
+
+def post_delete(request, pk=None):
+    instance = get_object_or_404(Post, pk=pk)
+    instance.delete()
+    messages.success(request, "Successfully Deleted.")
+    return redirect("posts:list")
 
 # def post_update(request, id=None):
 #     instance = get_object_or_404(Post, id=id)

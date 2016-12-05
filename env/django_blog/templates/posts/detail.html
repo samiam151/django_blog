@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<button id="getList">Show List</button>
+<button id="clearList">Clear List</button>
+<div class="contents"></div>
+
 <div class="post-detail">
     <h2>{{object.title}}</h2>
 
@@ -18,6 +22,9 @@
     <a href="{% url 'posts:update' pk=object.pk  %}">Edit</a>
     <a href="{% url 'posts:delete' pk=object.pk  %}">Delete</a>
 </div>
+
+
+
 
 
 {% endblock content %}
